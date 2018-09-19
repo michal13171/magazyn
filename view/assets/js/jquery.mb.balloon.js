@@ -233,9 +233,8 @@
 				close.on("click", function () {
 					$self.hideBalloon();
 				})
-			};
-
-			var target = self.opt.target != "self" ? jQuery(self.opt.target) : $self;
+            }
+            var target = self.opt.target != "self" ? jQuery(self.opt.target) : $self;
 
 			function displayBalloon() {
 
