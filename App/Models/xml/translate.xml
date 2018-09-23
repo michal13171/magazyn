@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translate>
+
+    <lang iso="en">
+
+        <title>Magazyn MVC Project</title>
+        <text>Hello world!</text>
+
+    </lang>
+
+
+    <lang iso="pl">
+
+        <title>MAgazyn MVC projekt</title>
+        <text>Witaj świecie!</text>
+
+    </lang>
+
+</translate>
