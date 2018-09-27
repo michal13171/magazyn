@@ -9,12 +9,19 @@
 namespace App\Controller;
 
 
+
 class HomeController
 {
-    public function index($id = '', $name = '')
+    public function __construct()
     {
+        $this->index();
+    }
 
-        echo 'This Class Worked ' . __CLASS__ . ' method ' . __METHOD__;
+    public function index()
+    {
+        $data = __FUNCTION__;
+        $view = require VIEW . 'index.php';
+        return $view;
 //        echo 'Moje id = '.$id.' nazwa podstrony '.$name;
 //        $this->view(VIEW, [
 //            'id'   => $id,
@@ -23,6 +30,30 @@ class HomeController
     }
 
     public function create()
+    {
+        echo 'This Class Worked ';
+
+    }
+
+    public function store()
+    {
+        echo 'This Class Worked ';
+
+    }
+
+    public function edit()
+    {
+        echo 'This Class Worked ';
+
+    }
+
+    public function update()
+    {
+        echo 'This Class Worked ';
+
+    }
+
+    public function destroy()
     {
         echo 'This Class Worked ';
 
