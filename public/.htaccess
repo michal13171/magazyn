@@ -1,5 +1,7 @@
 RewriteEngine On
 
+php_value include_path '.;C:\xampp\php\PEAR;D:\xampp\htdocs\magazyn'
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 

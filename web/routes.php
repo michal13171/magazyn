@@ -15,8 +15,11 @@ Route::set('', function () {
     echo 'działa';
 });
 Route::set('home', function () {
-    new HomeController();
+    $homeController = new HomeController();
+    $homeController->index();
 });
 Route::set('product', function () {
-    new ProductController();
+    $productController = new ProductController();
+    $productController->index();
+
 });

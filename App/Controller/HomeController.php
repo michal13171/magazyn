@@ -9,17 +9,16 @@
 namespace App\Controller;
 
 
+use App\Models\Product;
 
-class HomeController
+class HomeController extends Controller
 {
-    public function __construct()
-    {
-        $this->index();
-    }
 
     public function index()
     {
-        $data = __FUNCTION__;
+        // pr(self::query("SELECT * FROM products"));
+        $products = $this->model(Product::class);
+        echo $products->name = 'Arek';
         $view = require VIEW . 'index.php';
         return $view;
 //        echo 'Moje id = '.$id.' nazwa podstrony '.$name;

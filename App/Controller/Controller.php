@@ -8,10 +8,18 @@
 
 namespace App\Controller;
 
+use App\Config\Database;
 use App\Config\View;
 
-class Controller
+class Controller extends Database
 {
+    public function model($model)
+    {
+        require_once $model . '.php';
+        //  pr(file_exists(MODEL . $model . '.php')? Product::class: 'nie prawda');
+        return new $model;
+    }
+
     public function view($view_name, $data = [])
     {
         $this->view = new View($view_name, $data);

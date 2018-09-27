@@ -2,8 +2,6 @@
 
 use App\Config\App;
 
-//use web\Routes;
-
 function pr($zm)
 {
     echo '<pre>', var_dump($zm), '</pre>';
@@ -21,8 +19,5 @@ $modules = [APP, CONFIG, CONTROLLER, MODEL, SERVICES, VIEW];
 set_include_path(get_include_path() . PATH_SEPARATOR . implode(PATH_SEPARATOR, $modules));
 
 require_once '../App/Config/autoload/autoload.php';
-require '../web/routes.php';
 
-//new App();
-
-
+new App();
