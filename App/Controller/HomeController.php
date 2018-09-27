@@ -16,16 +16,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        // pr(self::query("SELECT * FROM products"));
         $products = $this->model(Product::class);
-        echo $products->name = 'Arek';
-        $view = require VIEW . 'index.php';
-        return $view;
-//        echo 'Moje id = '.$id.' nazwa podstrony '.$name;
-//        $this->view(VIEW, [
-//            'id'   => $id,
-//            'name' => $name,
-//        ]);
+        $products->name = 'Arek';
+        return $this->view('viewProduct/index.twig', ['name' => $products->name]);
     }
 
     public function create()

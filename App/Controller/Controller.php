@@ -9,7 +9,6 @@
 namespace App\Controller;
 
 use App\Config\Database;
-use App\Config\View;
 
 class Controller extends Database
 {
@@ -22,9 +21,7 @@ class Controller extends Database
 
     public function view($view_name, $data = [])
     {
-        $this->view = new View($view_name, $data);
-        pr($this->view);
-        return $this->view;
+        require VIEW . $view_name . '.php';
     }
 
 }
