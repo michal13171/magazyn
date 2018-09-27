@@ -8,12 +8,8 @@
 
 namespace App\Controller;
 
-class ProductController
+class ProductController extends Controller
 {
-    public function __construct()
-    {
-        $this->index();
-    }
 
     public function index()
     {

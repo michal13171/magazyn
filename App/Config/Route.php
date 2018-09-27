@@ -13,19 +13,13 @@ class Route
 
     public function set($url, $callback__func)
     {
-        self::$validroute[] = $url;
+        self::$validroute[] = filter_var(trim($url), FILTER_SANITIZE_URL);
         if (isset($_SERVER['QUERY_STRING'])) {
 
             if ($_SERVER['QUERY_STRING'] == 'args=' . $url) {
                 $callback__func->__invoke();
             }
         }
-
-//        if (isset($_REQUEST['args'])) {
-//            if ($_REQUEST['args'] == 'args=' . $url) {
-//                $callback__func->__invoke();
-//            }
-//        }
 
     }
 }

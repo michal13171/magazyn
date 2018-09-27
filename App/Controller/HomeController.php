@@ -9,24 +9,16 @@
 namespace App\Controller;
 
 
+use App\Models\Product;
 
-class HomeController
+class HomeController extends Controller
 {
-    public function __construct()
-    {
-        $this->index();
-    }
 
     public function index()
     {
-        $data = __FUNCTION__;
-        $view = require VIEW . 'index.php';
-        return $view;
-//        echo 'Moje id = '.$id.' nazwa podstrony '.$name;
-//        $this->view(VIEW, [
-//            'id'   => $id,
-//            'name' => $name,
-//        ]);
+        $products = $this->model(Product::class);
+        $products->name = 'Arek';
+        return $this->view('viewProduct/index.twig', ['name' => $products->name]);
     }
 
     public function create()

@@ -8,8 +8,7 @@
  */
 
 
-
-require 'dbconfig.php';
+require 'Database.php';
 interface cmsProductsObserver{
     public function getAll();
     public function get( cmsProductsObservable $observer);
