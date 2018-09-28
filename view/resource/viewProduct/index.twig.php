@@ -7,7 +7,7 @@ include VIEW . 'inc/header.php';
         {% endfor %}
     </ul>
 
-    <h1>My Webpage</h1>
+    <h1>My folder produkt</h1>
     {{ name }}
 <?php
 
