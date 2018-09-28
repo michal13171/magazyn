@@ -9,6 +9,7 @@
 namespace App\Config;
 
 use PDO;
+use PDOException;
 
 abstract class Database
 {
