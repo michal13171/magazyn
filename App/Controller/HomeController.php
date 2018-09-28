@@ -10,15 +10,24 @@ namespace App\Controller;
 
 
 use App\Models\Product;
+use Twig_Environment;
+use Twig_Loader_Filesystem;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
+
+        $loader = new Twig_Loader_Filesystem(VIEW);
+        $twig = new Twig_Environment($loader);
         $products = $this->model(Product::class);
         $products->name = 'Arek';
-        return $this->view('viewProduct/index.twig', ['name' => $products->name]);
+        $view = require VIEW . 'index.html.twig';
+
+        //echo pr($twig->render(VIEW.'viewProduct/index.html', ['name' => $products->name]));
+        return $twig->render($this->view('index.html'), ['name' => $products->name]);
+
     }
 
     public function create()

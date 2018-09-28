@@ -17,7 +17,7 @@ define('VIEW', ROOT . 'view\resource' . DIRECTORY_SEPARATOR);
 
 $modules = [APP, CONFIG, CONTROLLER, MODEL, SERVICES, VIEW];
 set_include_path(get_include_path() . PATH_SEPARATOR . implode(PATH_SEPARATOR, $modules));
-
 require_once '../App/Config/autoload/autoload.php';
+require_once ROOT . 'vendor/autoload.php';
 
 new App();

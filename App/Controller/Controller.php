@@ -9,9 +9,12 @@
 namespace App\Controller;
 
 use App\Config\Database;
+use Twig_Environment;
+use Twig_Loader_Filesystem;
 
 class Controller extends Database
 {
+
     public function model($model)
     {
         require_once $model . '.php';
@@ -21,7 +24,15 @@ class Controller extends Database
 
     public function view($view_name, $data = [])
     {
-        require VIEW . $view_name . '.php';
+        require VIEW . $view_name . '.twig';
     }
 
+    public function renderRoute($view_name, $data = null)
+    {
+        $loadView = require VIEW . $view_name . '.html';
+        $loader = new  Twig_Loader_Filesystem($loadView);
+        pr($loader);
+        $twig = new Twig_Environment($loader);
+        return $twig;
+    }
 }
