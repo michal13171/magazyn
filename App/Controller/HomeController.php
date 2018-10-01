@@ -16,8 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::all();
-        dump($products);
-        echo $this->view()->render('\viewProduct\index.twig.php', ['name' => $result]);
+        echo $this->view()->render('\viewProduct\index.twig.php', ['products' => $products]);
 
     }
 

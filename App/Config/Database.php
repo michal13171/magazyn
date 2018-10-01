@@ -17,17 +17,17 @@ class Database
     public function __construct()
     {
         $capsule = new Capsule;
-
         $capsule->addConnection([
             'driver' => 'mysql',
-            'host' => '192.168.1.1',
+            'host' => '127.0.0.1',
             'database' => 'magazyn',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
             'collation' => 'utf8_polish_ci',
             'prefix' => '',
-        ], "default");
+        ]);
+
         $capsule->setEventDispatcher(new Dispatcher(new Container));
 
 // Make this Capsule instance available globally via static methods... (optional)
