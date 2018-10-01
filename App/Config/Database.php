@@ -8,38 +8,35 @@
 
 namespace App\Config;
 
-use PDO;
-use PDOException;
+use Illuminate\Container\Container;
+use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Events\Dispatcher;
 
-abstract class Database
+class Database
 {
-    protected $pdo;
-    private static $engineDB = "mysql";
-    private static $localHost = "127.0.0.1";
-    private static $port = "3306";
-    private static $encoding = "utf-8";
-    private static $db_name = "magazyn";
-    private static $user = "root";
-    private static $password = "";
-
-    /**
-     * DBConnect constructor.
-     */
     public function __construct()
     {
-        $dsn = self::$engineDB . ':host=' . self::$localHost . ';port=' . self::$port . ';encoding=' . self::$encoding . ';dbname=' . self::$db_name;
-        try {
-            $this->pdo = new PDO($dsn, self::$user, self::$password);
-            $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->pdo->query("SET NAMES 'utf8'");
-        } catch (PDOException $e) {
-            die('Wystapił błąd: ' . $e->getMessage());
-        }
-    }
+        $capsule = new Capsule;
 
-    public function __destruct()
-    {
-        $this->pdo = null;
+        $capsule->addConnection([
+            'driver' => 'mysql',
+            'host' => '192.168.1.1',
+            'database' => 'magazyn',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+            'collation' => 'utf8_polish_ci',
+            'prefix' => '',
+        ], "default");
+        $capsule->setEventDispatcher(new Dispatcher(new Container));
+
+// Make this Capsule instance available globally via static methods... (optional)
+        $capsule->setAsGlobal();
+
+// Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
+        $capsule->bootEloquent();
+
+
+        return $capsule;
     }
 }

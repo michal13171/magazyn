@@ -5,11 +5,20 @@
  * Date: 27.09.2018
  * Time: 18:12
  */
-
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 
-class Product
+class Product extends Model
 {
-    public $product;
+
+    // public $exists = true;
+    //  public $timestamps = false;
+    protected $table = 'products';
+    //  protected $connection = 'products';
+//    protected $primaryKey = 'id';
+    protected $fillable = [
+        'name', 'barcode', 'quantity', 'weight'
+    ];
+
 }
