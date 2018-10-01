@@ -11,10 +11,6 @@ namespace App\Config;
 
 class App
 {
-    protected $controller = 'HomeController';
-    protected $methods = 'index';
-    protected $params = array();
-
     public function __construct()
     {
         $this->parse_utl();

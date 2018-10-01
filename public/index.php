@@ -1,11 +1,7 @@
 <?php
 
 use App\Config\App;
-
-function pr($zm)
-{
-    echo '<pre>', var_dump($zm), '</pre>';
-}
+use App\Config\Database;
 
 define('ROOT', dirname(realpath(__DIR__)) . DIRECTORY_SEPARATOR);
 define('APP', ROOT . 'App' . DIRECTORY_SEPARATOR);
@@ -17,7 +13,7 @@ define('VIEW', ROOT . 'view\resource' . DIRECTORY_SEPARATOR);
 
 $modules = [APP, CONFIG, CONTROLLER, MODEL, SERVICES, VIEW];
 set_include_path(get_include_path() . PATH_SEPARATOR . implode(PATH_SEPARATOR, $modules));
-require_once '../App/Config/autoload/autoload.php';
 require_once ROOT . 'vendor/autoload.php';
-
+$ss = new Database();
+require_once '../App/Config/autoload/autoload.php';
 new App();

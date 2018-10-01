@@ -12,6 +12,23 @@
   "require": {
     "twig/twig": "^2.0",
     "ext-dom": "*",
-    "ext-pdo": "*"
-  }
+    "ext-pdo": "*",
+    "illuminate/database": "5.7.6",
+    "illuminate/events": "^5.7",
+    "symfony/debug": "^4.1"
+  },
+  "autoload": {
+    "files": [
+      "App//Config//Database.php",
+      "migrations//tables.php"
+    ],
+    "classmap": [
+      "App//Models//",
+      "App//Config//"
+    ]
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^4.1"
+  },
+  "prefer-stable": true
 }

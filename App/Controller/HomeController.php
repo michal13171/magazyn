@@ -13,13 +13,11 @@ use App\Models\Product;
 
 class HomeController extends Controller
 {
-
     public function index()
     {
-        $products = $this->model(Product::class);
-        $products->name = 'Arek';
-
-        echo $this->view()->render('\viewProduct\index.twig.php', ['name' => $products->name]);
+        $products = Product::all();
+        dump($products);
+        echo $this->view()->render('\viewProduct\index.twig.php', ['name' => $result]);
 
     }
 

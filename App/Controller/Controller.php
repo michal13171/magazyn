@@ -8,13 +8,11 @@
 
 namespace App\Controller;
 
-use App\Config\Database;
 use Twig_Environment;
 use Twig_Loader_Filesystem;
 
-class Controller extends Database
+class Controller
 {
-
     public function model($model)
     {
         require_once $model . '.php';

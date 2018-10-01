@@ -8,7 +8,9 @@ include VIEW . 'inc/header.php';
     </ul>
 
     <h1>My folder produkt</h1>
-    {{ name }}
+    {% for name in navigation %}
+    <li>>{{ navigation.name }}</li>
+    {% endfor %}
 <?php
 
 include VIEW . 'inc/footer.php';
