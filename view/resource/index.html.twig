@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Webpage</title>
-</head>
-<body>
-<a href="Home" class="btn btn-sm btn-primary">Modyfikuj</a>
-<a href="Product" class="btn btn-sm btn-primary">Modyfikuj</a>
+{% include('./inc/header.twig.html') %}
+{% include('./inc/navbar.twig.html') %}
+
+{{ yield }}
 <ul id="navigation">
     {% for item in navigation %}
     <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
@@ -14,5 +10,4 @@
 
 <h1>My Webpage</h1>
 {{ name }}
-</body>
-</html>
+{% include('./inc/footer.twig.html') %}

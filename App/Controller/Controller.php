@@ -15,14 +15,15 @@ class Controller
 {
     public function model($model)
     {
-        require_once $model . '.php';
+        require_once $model . '.twig';
         return new $model;
     }
 
     public function view()
     {
-        $loader = new Twig_Loader_Filesystem(VIEW);
+        $loader = new Twig_Loader_Filesystem([VIEW, VIEW . 'inc/']);
         $twig = new Twig_Environment($loader);
+
         return $twig;
     }
 }

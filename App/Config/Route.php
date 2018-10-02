@@ -7,6 +7,7 @@
  */
 
 namespace App\Config;
+
 class Route
 {
     public static $validroute = array();
@@ -16,7 +17,7 @@ class Route
         self::$validroute[] = filter_var(trim($url), FILTER_SANITIZE_URL);
         if (isset($_SERVER['QUERY_STRING'])) {
 
-            if ($_SERVER['QUERY_STRING'] == 'args=' . $url) {
+            if ($_SERVER['QUERY_STRING'] == 'args=' . $url || $_SERVER['QUERY_STRING'] == $url) {
                 $callback__func->__invoke();
             }
         }
