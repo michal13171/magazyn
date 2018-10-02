@@ -12,7 +12,8 @@ use App\Controller\HomeController;
 use App\Controller\ProductController;
 
 Route::set('', function () {
-    echo 'działa';
+    $homeController = new HomeController();
+    $homeController->index();
 });
 Route::set('home', function () {
     $homeController = new HomeController();
