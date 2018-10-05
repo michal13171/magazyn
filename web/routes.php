@@ -6,21 +6,30 @@
  * Time: 15:01
  */
 
-
 use App\Config\Route;
 use App\Controller\HomeController;
-use App\Controller\ProductController;
 
 Route::set('', function () {
-    $homeController = new HomeController();
-    $homeController->index();
-});
-Route::set('home', function () {
-    $homeController = new HomeController();
-    $homeController->index();
-});
-Route::set('product', function () {
-    $productController = new ProductController();
+    $productController = new HomeController();
     $productController->index();
-
 });
+
+Route::set('product/create', function () {
+    HomeController::create();
+});
+Route::set('product/create', function () {
+    $productController = new HomeController();
+    $productController->store();
+});
+
+if (isset($_GET['id'])) {
+    Route::set('product?id=' . HomeController::edit($_GET['id']) . '/edit', function () {
+        HomeController::edit($_GET['id']);
+    });
+}
+if (isset($_GET['id'])) {
+    Route::set('product?id=' . HomeController::update($_GET['id']) . '/edit', function () {
+        HomeController::update($_GET['id']);
+    });
+}
+

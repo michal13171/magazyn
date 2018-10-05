@@ -1,0 +1,14 @@
+{% include('header.php.twig') %}
+{% include('navbar.php.twig') %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-11">
+            <form action="create" method="post" class="text-center border border-light p-5 needs-validation" novalidate>
+                {% include 'viewProduct/form.php.twig' %}
+                <button class='btn btn-primary' type='submit'>Wyślij formularz</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include('footer.php.twig') %}

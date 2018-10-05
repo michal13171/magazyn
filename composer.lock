@@ -303,7 +303,7 @@
     },
     {
       "name": "illuminate/container",
-      "version": "v5.7.6",
+      "version": "v5.7.7",
       "source": {
         "type": "git",
         "url": "https://github.com/illuminate/container.git",
@@ -347,16 +347,16 @@
     },
     {
       "name": "illuminate/contracts",
-      "version": "v5.7.6",
+      "version": "v5.7.7",
       "source": {
         "type": "git",
         "url": "https://github.com/illuminate/contracts.git",
-        "reference": "2daf3c078610f744e2a4dc2f44fb5060cce9835b"
+        "reference": "72e125b25d3f7aabbf4b2ef68590db7637b8223c"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/illuminate/contracts/zipball/2daf3c078610f744e2a4dc2f44fb5060cce9835b",
-        "reference": "2daf3c078610f744e2a4dc2f44fb5060cce9835b",
+        "url": "https://api.github.com/repos/illuminate/contracts/zipball/72e125b25d3f7aabbf4b2ef68590db7637b8223c",
+        "reference": "72e125b25d3f7aabbf4b2ef68590db7637b8223c",
         "shasum": ""
       },
       "require": {
@@ -387,7 +387,7 @@
       ],
       "description": "The Illuminate Contracts package.",
       "homepage": "https://laravel.com",
-      "time": "2018-09-18T12:50:05+00:00"
+      "time": "2018-09-27T14:15:29+00:00"
     },
     {
       "name": "illuminate/database",
@@ -450,7 +450,7 @@
     },
     {
       "name": "illuminate/events",
-      "version": "v5.7.6",
+      "version": "v5.7.7",
       "source": {
         "type": "git",
         "url": "https://github.com/illuminate/events.git",
@@ -495,16 +495,16 @@
     },
     {
       "name": "illuminate/support",
-      "version": "v5.7.6",
+      "version": "v5.7.7",
       "source": {
         "type": "git",
         "url": "https://github.com/illuminate/support.git",
-        "reference": "f7c68e8c8aab200cc8ad84f974d5511cda58a742"
+        "reference": "d01c9ac04dee022ff3cd931e60e989a0d950812a"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/illuminate/support/zipball/f7c68e8c8aab200cc8ad84f974d5511cda58a742",
-        "reference": "f7c68e8c8aab200cc8ad84f974d5511cda58a742",
+        "url": "https://api.github.com/repos/illuminate/support/zipball/d01c9ac04dee022ff3cd931e60e989a0d950812a",
+        "reference": "d01c9ac04dee022ff3cd931e60e989a0d950812a",
         "shasum": ""
       },
       "require": {
@@ -550,7 +550,7 @@
       ],
       "description": "The Illuminate Support package.",
       "homepage": "https://laravel.com",
-      "time": "2018-09-19T18:36:57+00:00"
+      "time": "2018-10-01T13:13:54+00:00"
     },
     {
       "name": "nesbot/carbon",
@@ -753,16 +753,16 @@
     },
     {
       "name": "symfony/debug",
-      "version": "v4.1.5",
+      "version": "v4.1.6",
       "source": {
         "type": "git",
         "url": "https://github.com/symfony/debug.git",
-        "reference": "b4a0b67dee59e2cae4449a8f8eabc508d622fd33"
+        "reference": "e3f76ce6198f81994e019bb2b4e533e9de1b9b90"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/symfony/debug/zipball/b4a0b67dee59e2cae4449a8f8eabc508d622fd33",
-        "reference": "b4a0b67dee59e2cae4449a8f8eabc508d622fd33",
+        "url": "https://api.github.com/repos/symfony/debug/zipball/e3f76ce6198f81994e019bb2b4e533e9de1b9b90",
+        "reference": "e3f76ce6198f81994e019bb2b4e533e9de1b9b90",
         "shasum": ""
       },
       "require": {
@@ -805,7 +805,7 @@
       ],
       "description": "Symfony Debug Component",
       "homepage": "https://symfony.com",
-      "time": "2018-09-22T19:04:12+00:00"
+      "time": "2018-10-02T16:36:10+00:00"
     },
     {
       "name": "symfony/polyfill-ctype",
@@ -926,16 +926,16 @@
     },
     {
       "name": "symfony/translation",
-      "version": "v4.1.5",
+      "version": "v4.1.6",
       "source": {
         "type": "git",
         "url": "https://github.com/symfony/translation.git",
-        "reference": "6e49130ddf150b7bfe9e34edb2f3f698aa1aa43b"
+        "reference": "9f0b61e339160a466ebcde167a6c5521c810e304"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/symfony/translation/zipball/6e49130ddf150b7bfe9e34edb2f3f698aa1aa43b",
-        "reference": "6e49130ddf150b7bfe9e34edb2f3f698aa1aa43b",
+        "url": "https://api.github.com/repos/symfony/translation/zipball/9f0b61e339160a466ebcde167a6c5521c810e304",
+        "reference": "9f0b61e339160a466ebcde167a6c5521c810e304",
         "shasum": ""
       },
       "require": {
@@ -991,7 +991,7 @@
       ],
       "description": "Symfony Translation Component",
       "homepage": "https://symfony.com",
-      "time": "2018-09-21T12:49:42+00:00"
+      "time": "2018-10-02T16:36:10+00:00"
     },
     {
       "name": "twig/extensions",
@@ -1174,16 +1174,16 @@
     },
     {
       "name": "symfony/var-dumper",
-      "version": "v4.1.5",
+      "version": "v4.1.6",
       "source": {
         "type": "git",
         "url": "https://github.com/symfony/var-dumper.git",
-        "reference": "1509020968321c1d46408c11c142a2388b1c9b0c"
+        "reference": "60319b45653580b0cdacca499344577d87732f16"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/symfony/var-dumper/zipball/1509020968321c1d46408c11c142a2388b1c9b0c",
-        "reference": "1509020968321c1d46408c11c142a2388b1c9b0c",
+        "url": "https://api.github.com/repos/symfony/var-dumper/zipball/60319b45653580b0cdacca499344577d87732f16",
+        "reference": "60319b45653580b0cdacca499344577d87732f16",
         "shasum": ""
       },
       "require": {
@@ -1245,7 +1245,7 @@
         "debug",
         "dump"
       ],
-      "time": "2018-09-18T12:45:12+00:00"
+      "time": "2018-10-02T16:36:10+00:00"
     }
   ],
   "aliases": [],
