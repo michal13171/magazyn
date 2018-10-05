@@ -3,6 +3,8 @@
 use App\Config\App;
 use App\Config\Database;
 
+ob_start();
+
 define('ROOT', dirname(realpath(__DIR__)) . DIRECTORY_SEPARATOR);
 define('APP', ROOT . 'App' . DIRECTORY_SEPARATOR);
 define('CONFIG', ROOT . 'App\Config' . DIRECTORY_SEPARATOR);
@@ -17,3 +19,4 @@ require_once ROOT . 'vendor/autoload.php';
 new Database();
 require_once '../App/Config/autoload/autoload.php';
 new App();
+ob_end_flush();

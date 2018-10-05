@@ -1,0 +1,57 @@
+{% include('header.php.twig') %}
+{% include('navbar.php.twig') %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+            <h1>My products</h1>
+            <div class="row">
+                <div class="btn btn-group px-2">
+                    <a type="button" class="btn btn-sm btn-primary" href="product/create"> Create Product </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="table-responsive">
+
+                <table class=" table table-hover table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">name</th>
+                        <th scope="col">barcode</th>
+                        <th scope="col">quantity</th>
+                        <th scope="col">weight</th>
+                        <th scope="col text-center" style="text-align: center;">modify</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in products %}
+                        {% set i = i + 1 %}
+                        <tr>
+                            <th scope="row">{{ i }}</th>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.barcode }}</td>
+                            <td>{{ product.quantity }}</td>
+                            <td>{{ product.weight }}</td>
+                            <td>
+                                <div class="btn-group d-flex justify-content-around" role="group"
+                                     aria-label="Basic example">
+                                    <a type="button" class="btn btn-primary" href="{{ product.id }}">Info</a>
+                                    <a type="button" class="btn btn-success" href="product?id={{ product.id }}/edit">Edit</a>
+                                    <a type="button" class="btn btn-danger">Remove</a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <ul class="list-group">
+                    {% for productsCats in productsCat %}
+                        <li><a href="/magazyn/public?args={{ productsCats.id }}">{{ productsCats.id }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% include('footer.php.twig') %}

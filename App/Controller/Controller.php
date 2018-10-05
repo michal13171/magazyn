@@ -19,6 +19,17 @@ class Controller
         return new $model;
     }
 
+    public function valid($valid)
+    {
+        require_once $valid . '.php';
+        return new $valid;
+    }
+
+    public function request($model)
+    {
+        require_once $model . '.twig';
+        return new $model;
+    }
     public function view()
     {
         $loader = new Twig_Loader_Filesystem([VIEW, VIEW . 'inc/']);
