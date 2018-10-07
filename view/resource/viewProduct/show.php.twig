@@ -1,0 +1,42 @@
+{% include('header.php.twig') %}
+{% include('navbar.php.twig') %}
+<div class="container mt-5">
+    <div class="row">
+        <h2>Szczegóły produktu nr. {{ clean_id }}</h2>
+        <div class="col-md-11">
+
+            <table class="table table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">Dane produktu</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Id</th>
+                    <td>{{ clean_id }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nazwa</th>
+                    <td>{{ product.name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Kod produktu</th>
+                    <td>{{ product.barcode }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Ilość</th>
+                    <td>{{ product.quantity }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Waga</th>
+                    <td>{{ product.weight }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% include('footer.php.twig') %}

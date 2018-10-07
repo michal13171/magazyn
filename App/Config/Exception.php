@@ -13,8 +13,11 @@ class ExceptionClass extends \Exception
 
     public function __construct($s)
     {
-        print "Error: " . $s;
-        exit;
+        try{
+            $s;
+        }catch (\Exception $e){
+            $e->getMessage();
+        }
     }
 
 }

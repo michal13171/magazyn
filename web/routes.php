@@ -22,6 +22,8 @@ Route::set('product/create', function () {
     $productController->store();
 });
 
+
+
 if (isset($_GET['id'])) {
     Route::set('product?id=' . HomeController::edit($_GET['id']) . '/edit', function () {
         HomeController::edit($_GET['id']);
@@ -33,3 +35,8 @@ if (isset($_GET['id'])) {
     });
 }
 
+if (isset($_GET['show'])) {
+    Route::set('product?id=' . HomeController::show($_GET['show']), function () {
+        HomeController::show($_GET['show']);
+    });
+}
