@@ -48,6 +48,15 @@ class HomeController extends Controller
         }
     }
 
+    public static function show($id){
+        $product = Product::find($id);
+        if (isset($product)) {
+            $idRemoveStr = $_GET['show'];
+            $clean_id = preg_replace('#[^0-9]#', '', $idRemoveStr);
+            echo self::view()->render('\viewProduct\show.php.twig', compact('product', 'clean_id'));
+        }
+    }
+
     public function index()
     {
         $products = Product::all();

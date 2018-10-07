@@ -2,6 +2,7 @@
 
 use App\Config\App;
 use App\Config\Database;
+use App\Controller\ExceptionClass;
 
 ob_start();
 
@@ -18,5 +19,5 @@ set_include_path(get_include_path() . PATH_SEPARATOR . implode(PATH_SEPARATOR, $
 require_once ROOT . 'vendor/autoload.php';
 new Database();
 require_once '../App/Config/autoload/autoload.php';
-new App();
+new ExceptionClass(new App());
 ob_end_flush();

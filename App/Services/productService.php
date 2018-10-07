@@ -6,9 +6,3 @@
  * Time: 11:12
  */
 
-function getAllProducts()
-{
-    $results = app('db')->select("SELECT * FROM products");
-    return $results;
-
-}
