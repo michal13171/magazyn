@@ -6,3 +6,6 @@
  * Time: 11:12
  */
 
+function paginate($site = null){
+
+}

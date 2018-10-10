@@ -10,6 +10,7 @@ namespace App\Controller;
 
 use App\Models\Product;
 use Illuminate\Database\Capsule\Manager;
+use voku\helper\Paginator;
 
 class HomeController extends Controller
 {
@@ -48,7 +49,8 @@ class HomeController extends Controller
         }
     }
 
-    public static function show($id){
+    public static function show($id)
+    {
         $product = Product::find($id);
         if (isset($product)) {
             $idRemoveStr = $_GET['show'];
@@ -57,21 +59,13 @@ class HomeController extends Controller
         }
     }
 
-    public function index()
+    public static function index($id = null)
     {
-        $products = Product::all();
-        $productsCat = Manager::table('products')->take(5)->get();
-        dump($_POST);
-
-        if (isset($_GET['args'])) {
-            dump($_GET['args']);
-//        dump($products->reject(function ($products){
-//echo $products;
-//        }));
-            //echo $this->view()->render('\viewProduct\index.php.twig', compact('products', 'productsCat'));
-        }
-        echo $this->view()->render('\viewProduct\index.php.twig', compact('products', 'productsCat'));
-
+        $productsCat = Manager::select('SELECT * FROM products ');
+        $pages = new Paginator('5', 'p');
+        $pages->set_total(count($productsCat));
+        $products = Manager::select('SELECT * FROM products ' . $pages->get_limit());
+        echo self::view()->render('\viewProduct\index.php.twig', compact('products', 'pages'));
     }
 
     public function store()
@@ -90,9 +84,14 @@ class HomeController extends Controller
         }
     }
 
-    public function destroy()
+    public static function destroy($id)
     {
-        echo 'This Class Worked ';
+        $product = Manager::delete('DELETE FROM products WHERE id=?', [$id]);
 
+        if ($product) {
+            header("Location: /magazyn/public");
+        } else {
+            echo 'problem';
+        }
     }
 }

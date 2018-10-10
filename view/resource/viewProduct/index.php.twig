@@ -36,20 +36,18 @@
                             <td>
                                 <div class="btn-group d-flex justify-content-around" role="group"
                                      aria-label="Basic example">
-                                    <a type="button" class="btn btn-primary" href="product?show={{ product.id }}">Info</a>
+                                    <a type="button" class="btn btn-primary"
+                                       href="product?show={{ product.id }}">Info</a>
                                     <a type="button" class="btn btn-success" href="product?id={{ product.id }}/edit">Edit</a>
-                                    <a type="button" class="btn btn-danger">Remove</a>
+                                    <a type="button" class="btn btn-danger"
+                                       href="product?product_remove_id={{ product.id }}">Remove</a>
                                 </div>
                             </td>
                         </tr>
                     {% endfor %}
                     </tbody>
                 </table>
-                <ul class="list-group">
-                    {% for productsCats in productsCat %}
-                        <li><a href="/magazyn/public?args={{ productsCats.id }}">{{ productsCats.id }}</a></li>
-                    {% endfor %}
-                </ul>
+                {{ pages.page_links()|raw }}
             </div>
         </div>
     </div>

@@ -15,8 +15,11 @@ class Controller
 {
     public function model($model)
     {
-        require_once $model . '.twig';
-        return new $model;
+        $zm =  $model.'.php';
+        if (file_exists($zm)){
+            $zdm =require_once   $zm;
+            return new $model;
+        }
     }
 
     public function valid($valid)
